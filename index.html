@@ -28,8 +28,16 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section>
+					<pre><code data-trim data-noescape>
+				se (<mark>x > 0</mark>)
+				(def lazy-fib
+				  (concat
+				   [0 1]
+				   <mark>((fn rfib [a b]</mark>
+						(lazy-cons (+ a b) (rfib b (+ a b)))) 0 1)))
+					</code></pre>
+				</section>
 			</div>
 		</div>
 
