@@ -3,6 +3,9 @@
     padding: 1em !important;
     line-height: 2 !important;
 }
+.reveal pre{
+    width: 100% !important;
+}
 .left{text-align: left}
 .right{text-align: right}
 .center{text-align: center}
