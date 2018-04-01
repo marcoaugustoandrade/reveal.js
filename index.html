@@ -37,6 +37,17 @@
 		<script src="js/reveal.js"></script>
 
 		<script>
+			function getParameterByName(name, url) {
+				if (!url) url = window.location.href;
+				name = name.replace(/[\[\]]/g, '\\$&');
+				var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+				results = regex.exec(url);
+				if (!results) return null;
+				if (!results[2]) return '';
+				return decodeURIComponent(results[2].replace(/\+/g, ' '));
+			}
+			var role = getParameterByName('role');
+			role = role === 'master' ? role : 'client';
 			// More info about config & dependencies:
 			// - https://github.com/hakimel/reveal.js#configuration
 			// - https://github.com/hakimel/reveal.js#dependencies
@@ -51,7 +62,14 @@
 				margin: 0.1,
 				minScale: 1,
 				maxScale: 1,
+				multiplex: {
+					secret: null,
+					id: null,
+					url: 'https://reveal-js-multiplex-ccjbegmaii.now.sh'
+				},
 				dependencies: [
+					{ src: 'lib/js/socket.io.min.js', async: true },
+          			{ src: 'plugin/multiplex/' + role + '.js', async: true },
 					{ src: 'plugin/markdown/marked.js' },
 					{ src: 'plugin/markdown/markdown.js' },
 					{ src: 'plugin/notes/notes.js', async: true },
