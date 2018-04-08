@@ -10,7 +10,7 @@
 		<link rel="stylesheet" href="css/theme/white.css">
 
 		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<link rel="stylesheet" href="lib/css/portugol-studio-dark.css">
 
 		<!-- Custom -->
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
@@ -38,14 +38,11 @@
 		<div class="reveal">
 			<div class="slides">
 				<section>
-					<pre><code data-trim data-noescape>
-				se (<mark>x > 0</mark>)
-				(def lazy-fib
-				  (concat
-				   [0 1]
-				   <mark>((fn rfib [a b]</mark>
-						(lazy-cons (+ a b) (rfib b (+ a b)))) 0 1)))
-					</code></pre>
+					<section>
+						<h1>Tópico</h1>
+						<h2>Sub-tópico</h2>
+						<p>Prof. Marco Antonio A. de Andrade</p>
+					</section>
 				</section>
 			</div>
 		</div>
@@ -79,11 +76,13 @@
 				margin: 0.1,
 				minScale: 1,
 				maxScale: 1,
+				/*
 				multiplex: {
 					secret: null,
 					id: null,
 					url: 'https://reveal-js-multiplex-ccjbegmaii.now.sh'
 				},
+				*/
 				dependencies: [
 					{ src: 'lib/js/socket.io.min.js', async: true },
           			{ src: 'plugin/multiplex/' + role + '.js', async: true },
